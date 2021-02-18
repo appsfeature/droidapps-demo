@@ -9,7 +9,7 @@ class Student extends REST_Controller{
     parent::__construct();
     //load database
     $this->load->database();
-    $this->load->model(array("api/student_model"));
+    $this->load->model(array("api/v1/student_model"));
     $this->load->library(array("form_validation"));
     $this->load->helper("security");
   }
@@ -22,6 +22,7 @@ class Student extends REST_Controller{
   */
 
   // POST: <project_url>/index.php/student
+  //http://localhost/happycoding/index.php/api/v1/student
   public function index_post(){
     // insert data method
 
@@ -149,8 +150,9 @@ class Student extends REST_Controller{
     }
   }
 
-  // GET: <project_url>/index.php/student
-  public function index_get(){
+  // GET: <project_url>/index.php/api/student
+  //http://localhost/happycoding/index.php/api/v1/student/get-data
+  public function get_data_get(){
     // list data method
     //echo "This is GET Method";
     // SELECT * from tbl_students;
