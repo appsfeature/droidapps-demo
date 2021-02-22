@@ -23,7 +23,7 @@ class Student extends REST_Controller{
 
   // POST: <project_url>/index.php/student
   //http://localhost/happycoding/index.php/api/v1/student
-  public function index_post(){
+  public function register_post(){
     // insert data method
 
     //print_r($this->input->post());die;
@@ -44,10 +44,8 @@ class Student extends REST_Controller{
     if($this->form_validation->run() === FALSE){
 
       // we have some errors
-      $this->response(array(
-        "status" => 0,
-        "message" => "All fields are needed"
-      ) , REST_Controller::HTTP_NOT_FOUND);
+
+      $this->responseResult(0,strip_tags(validation_errors()));
     }else{
 
       if(!empty($name) && !empty($email) && !empty($mobile) && !empty($course)){
@@ -76,7 +74,7 @@ class Student extends REST_Controller{
         // we have some empty field
         $this->response(array(
           "status" => 0,
-          "message" => "All fields are needed"
+          "message" => validation_errors()
         ), REST_Controller::HTTP_NOT_FOUND);
       }
     }
@@ -159,26 +157,22 @@ class Student extends REST_Controller{
     $students = $this->student_model->get_students();
 
     //print_r($query->result());
-
-    if(count($students) > 0){
-
-      $this->response(array(
-        "status" => 1,
-        "message" => "Students found",
-        "data" => $students
-      ), REST_Controller::HTTP_OK);
-    }else{
-
-      $this->response(array(
-        "status" => 0,
-        "message" => "No Students found",
-        "data" => $students
-      ), REST_Controller::HTTP_NOT_FOUND);
-    }
+    $this->load->view('admin/student_registration');
+    // die();
+    //
+    // if(count($students) > 0){
+    //
+    //   $this->responseResult(STATUS_SUCCESS,"Students found",$students);
+    // }else{
+    //   $this->responseResult(STATUS_FAILURE," No Students found");
+    //
+    // }
 
 
 
   }
+
+
 }
 
  ?>

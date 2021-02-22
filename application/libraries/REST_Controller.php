@@ -476,7 +476,7 @@ abstract class REST_Controller extends \CI_Controller {
         $this->request->body = NULL;
 
         $this->{'_parse_' . $this->request->method}();
-        
+
         // Fix parse method return arguments null
         if($this->{'_'.$this->request->method.'_args'} === null)
         {
@@ -657,8 +657,8 @@ abstract class REST_Controller extends \CI_Controller {
             {
                 $this->_log_request();
             }
-            
-            // fix cross site to option request error 
+
+            // fix cross site to option request error
             if($this->request->method == 'options') {
                 exit;
             }
@@ -748,6 +748,14 @@ abstract class REST_Controller extends \CI_Controller {
 	        $_error = &load_class('Exceptions', 'core');
 	        $_error->show_exception($ex);
         }
+    }
+
+    public function responseResult($status=null,$message=null,$data=null){
+      $this->response(array(
+        "status" => $status,
+        "message" => $message,
+        "data" => !empty($data)?$data:[]
+      ), REST_Controller::HTTP_OK);
     }
 
     /**

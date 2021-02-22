@@ -35,7 +35,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +102,8 @@ $config['charset'] = 'UTF-8';
 */
 $config['enable_hooks'] = FALSE;
 
+define('STATUS_SUCCESS', 1);
+define('STATUS_FAILURE', 0);
 /*
 |--------------------------------------------------------------------------
 | Class Extension Prefix
