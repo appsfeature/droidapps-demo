@@ -257,7 +257,7 @@ class Database extends REST_Controller{
     }
   }
 
-  //http://localhost/droidapps/index.php/api/v1/Database/get_content_by_category
+  //http://localhost/droidapps/index.php/api/v1/Database/get-content-by-category
   public function get_content_by_category_get(){
     $pkg_id = $this->input->get("pkg_id");
     $id = $this->input->get("id");
