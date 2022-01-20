@@ -17,7 +17,10 @@ Category API's
 
 BaseUrl: http://yourdomain.com/droidapps/index.php/api/v1/database/
 
-- Ajax Request in CodeIgniter 4 | Form Data Submit by Ajax
+- POST: insert-category
+  -Params: pkg_id, cat_name, sub_cat_id, cat_name, cat_type, image, order_id, visibility, json_data, other_property
+  -Where: pkg_id, cat_name, sub_cat_id
+  
 - CodeIgniter 4 Cookie Helper Tutorial
 - CodeIgniter 4 CRUD Tutorial | CRUD Example in CodeIgniter 4
 - CodeIgniter 4 CSRF Token | Implementation of CSRF Token in Application
