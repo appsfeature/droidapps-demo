@@ -18,7 +18,7 @@ Category API's
 BaseUrl: http://yourdomain.com/droidapps/index.php/api/v1/database/
 
 - POST: insert-category
-        Params : pkg_id, cat_name, sub_cat_id, cat_name, cat_type, image, order_id, visibility, json_data, other_property
+        Params : pkg_id, cat_name, sub_cat_id, cat_name, cat_type, image, order_id, visibility, json_data, other_property </br>
         Where  : pkg_id, cat_name, sub_cat_id
 
 - CodeIgniter 4 Cookie Helper Tutorial
