@@ -18,10 +18,11 @@ This is a developed community where you will find several interesting blog artic
 ### API Base Url: http://yourdomain.com/droidapps/index.php/api/v1/database/
 
 ## Category API's methods
-*******************
+
 - POST: insert-category, insert-update-category
 
-        Params : pkg_id, sub_cat_id, cat_name, cat_type, image, order_id, visibility, json_data, other_property
+        Params : pkg_id, sub_cat_id, cat_name, cat_type, image, order_id, visibility
+        , json_data, other_property
 
         Where  : pkg_id, cat_name, sub_cat_id
 
@@ -39,20 +40,21 @@ This is a developed community where you will find several interesting blog artic
 
         Params & Where : pkg_id, cat_id, sub_cat_id
 
-*******************
 
 
 ## Content API's methods
-*******************
+
 - POST: insert-content, insert-update-content
 
-        Params : pkg_id, cat_id, sub_cat_id, title, description, image, link, visibility, json_data, other_property
+        Params : pkg_id, cat_id, sub_cat_id, title, description, image, link, visibility
+        , json_data, other_property
 
         Where  : pkg_id, cat_id, sub_cat_id
 
 - POST: update-content
 
-        Params : pkg_id, id, cat_id, sub_cat_id, title, description, image, link, visibility, json_data, other_property
+        Params : pkg_id, id, cat_id, sub_cat_id, title, description, image, link, visibility
+        , json_data, other_property
 
         Where  : pkg_id, id, cat_id, sub_cat_id
 
@@ -68,11 +70,10 @@ This is a developed community where you will find several interesting blog artic
 
         Params & Where : pkg_id, id, cat_id, sub_cat_id
 
-*******************
 
 
 ## Data API's methods
-*******************
+
 - POST: insert-data, insert-update-data
 
         Params & Where : pkg_id, cat_id, json_data
@@ -88,5 +89,3 @@ This is a developed community where you will find several interesting blog artic
 - GET: get-data
 
         Params & Where : pkg_id, cat_id
-
-*******************
