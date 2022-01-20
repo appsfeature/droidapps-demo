@@ -22,7 +22,7 @@ class Student extends REST_Controller{
   */
 
   // POST: <project_url>/index.php/student
-  //http://localhost/happycoding/index.php/api/v1/student
+  //http://localhost/droidapps/index.php/api/v1/student/register
   public function register_post(){
     // insert data method
 
@@ -149,29 +149,17 @@ class Student extends REST_Controller{
   }
 
   // GET: <project_url>/index.php/api/student
-  //http://localhost/happycoding/index.php/api/v1/student/get-data
+  //http://localhost/droidapps/index.php/api/v1/student/get-data
   public function get_data_get(){
-    // list data method
-    //echo "This is GET Method";
-    // SELECT * from tbl_students;
     $students = $this->student_model->get_students();
-
     //print_r($query->result());
-    $this->load->view('admin/student_registration');
     // die();
-    //
-    // if(count($students) > 0){
-    //
-    //   $this->responseResult(STATUS_SUCCESS,"Students found",$students);
-    // }else{
-    //   $this->responseResult(STATUS_FAILURE," No Students found");
-    //
-    // }
-
-
-
+    if(count($students) > 0){
+      $this->responseResult(STATUS_SUCCESS,"Students found",$students);
+    }else{
+      $this->responseResult(STATUS_FAILURE," No Students found");
+    }
   }
-
 
 }
 

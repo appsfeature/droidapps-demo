@@ -591,6 +591,10 @@ abstract class REST_Controller extends \CI_Controller {
             $this->_log_access_time();
         }
     }
+   protected function print($message = null){
+        print_r("print");
+        print_r($message);die;
+   }
 
     /**
      * Checks to see if we have everything we need to run this library.
@@ -750,11 +754,35 @@ abstract class REST_Controller extends \CI_Controller {
         }
     }
 
+    public function responseStatus($status=null,$message=null){
+      $this->response(array(
+        "status" => $status,
+        "message" => $message
+      ), REST_Controller::HTTP_OK);
+    }
+
     public function responseResult($status=null,$message=null,$data=null){
       $this->response(array(
         "status" => $status,
         "message" => $message,
         "data" => !empty($data)?$data:[]
+      ), REST_Controller::HTTP_OK);
+    }
+
+    public function responseResultArrayObject($status=null,$message=null,$data=null){
+      if(!empty($data)){
+        if(is_array($data) && count($data) == 1){
+            $finalData = $data[0];
+        }else {
+          $finalData = $data;
+        }
+      }else {
+        $finalData = null;
+      }
+      $this->response(array(
+        "status" => $status,
+        "message" => $message,
+        "data" => $finalData
       ), REST_Controller::HTTP_OK);
     }
 
@@ -1125,7 +1153,7 @@ abstract class REST_Controller extends \CI_Controller {
                 $this->config->item('rest_logs_table'), [
                 'uri' => $this->uri->uri_string(),
                 'method' => $this->request->method,
-                'params' => $this->_args ? ($this->config->item('rest_logs_json_params') === TRUE ? json_encode($this->_args) : serialize($this->_args)) : NULL,
+                'params' => $this->_args ? ($this->config->item('rest_logs_json_params') === TRUE ? json_encode($this->_args, JSON_NUMERIC_CHECK) : serialize($this->_args)) : NULL,
                 'api_key' => isset($this->rest->key) ? $this->rest->key : '',
                 'ip_address' => $this->input->ip_address(),
                 'time' => time(),

@@ -10,7 +10,7 @@ class Student_model extends CI_Model{
   public function get_students(){
 
     $this->db->select("*");
-    $this->db->from("tbl_students");
+    $this->db->from("table_category");
     $query = $this->db->get();
 
     return $query->result();
