@@ -7,14 +7,6 @@ This is a developed community where you will find several interesting blog artic
 -[https://www.codeigniter.com/userguide3/database/query_builder.html](https://www.codeigniter.com/userguide3/database/query_builder.html)
 
 
-## ScreenShots
-
-<p align="left">
-  <img src="https://raw.githubusercontent.com/appsfeature/location-picker/master/screenshots/sample1.png" alt="Preview 1" width="250" />
-  <img src="https://raw.githubusercontent.com/appsfeature/location-picker/master/screenshots/sample2.png" alt="Preview 2" width="250" />
-</p>
-
-
 
 ### API Base Url: http://yourdomain.com/droidapps/index.php/api/v1/database/
 
@@ -91,3 +83,19 @@ This is a developed community where you will find several interesting blog artic
 - GET: get-data
 
         Params & Where : pkg_id, cat_id
+
+
+
+## ScreenShots
+
+## Table Category
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/appsfeature/droidapps/master/screenshots/tableContent.png" alt="Preview 1" width="600" />
+</p>
+
+## Table Content
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/appsfeature/droidapps/master/screenshots/tableCategory.png" alt="Preview 1" width="600" />
+</p>
