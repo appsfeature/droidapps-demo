@@ -2,9 +2,6 @@
 
 This is a developed community where you will find several interesting blog articles with short and cool codes. It contains Laravel 8, CodeIgniter 4, MySQL, WordPress, Node Js etc. Please visit once and see the power of learning from this blog.
 
-## CodeIgniter Documentation
-
--[https://www.codeigniter.com/userguide3/database/query_builder.html](https://www.codeigniter.com/userguide3/database/query_builder.html)
 
 
 
@@ -99,3 +96,9 @@ API Base Url: `http://yourdomain.com/droidapps/index.php/api/v1/database/`
 <p align="center">
   <img src="https://raw.githubusercontent.com/appsfeature/droidapps/master/screenshots/tableCategory.png" alt="Preview 1" width="600" />
 </p>
+
+
+
+## CodeIgniter Documentation
+
+- [https://www.codeigniter.com/userguide3/database/query_builder.html](https://www.codeigniter.com/userguide3/database/query_builder.html)
