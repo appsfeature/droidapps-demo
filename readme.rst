@@ -5,15 +5,17 @@ Droid-Apps Backend
 This is a developed community where you will find several interesting blog articles with short and cool codes. It contains Laravel 8, CodeIgniter 4, MySQL, WordPress, Node Js etc. Please visit once and see the power of learning from this blog.
 
 *******************
-Find your Article
+CodeIgniter Documentation
 *******************
 
 -  `CodeIgniter <https://www.codeigniter.com/userguide3/database/query_builder.html#selecting-data/>`_
- 
+
 
 *******************
-CodeIgniter 4
+Category API's
 *******************
+
+BaseUrl: http://yourdomain.com/droidapps/index.php/api/v1/database/
 
 - Ajax Request in CodeIgniter 4 | Form Data Submit by Ajax
 - CodeIgniter 4 Cookie Helper Tutorial

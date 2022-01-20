@@ -591,10 +591,6 @@ abstract class REST_Controller extends \CI_Controller {
             $this->_log_access_time();
         }
     }
-   protected function print($message = null){
-        print_r("print");
-        print_r($message);die;
-   }
 
     /**
      * Checks to see if we have everything we need to run this library.

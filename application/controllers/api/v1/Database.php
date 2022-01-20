@@ -276,6 +276,103 @@ class Database extends REST_Controller{
     }
   }
 
+  private function getDataWhereClause($pkg_id, $cat_id, $json_data){
+    if($cat_id != null){
+      return array('pkg_id' => $pkg_id, 'cat_id' => $cat_id, 'json_data' => $json_data);
+    }else{
+      return array('pkg_id' => $pkg_id, 'json_data' => $json_data);
+    }
+  }
+
+  //http://localhost/droidapps/index.php/api/v1/database/insert-data
+  //where: pkg_id, cat_name, sub_cat_id
+  public function insert_data_post(){
+        // print_r($whereClause);die;
+     $this->insertUpdateData(false);
+  }
+  //http://localhost/droidapps/index.php/api/v1/database/insert-update-data
+  //where: pkg_id, cat_name, sub_cat_id
+  public function insert_update_data_post(){
+     $this->insertUpdateData(false);
+  }
+  //http://localhost/droidapps/index.php/api/v1/database/update-data
+  //where: pkg_id, cat_id, sub_cat_id
+  public function update_data_post(){
+     $this->insertUpdateData(true);
+  }
+
+  private function insertUpdateData($isUpdateOnly = false){
+    $pkg_id = $this->input->post("pkg_id");
+    $cat_id = $this->input->post("cat_id");
+    $json_data = $this->input->post("json_data");
+    $title = "";
+    $whereClause = $this->getDataWhereClause($pkg_id, $cat_id, $json_data);
+
+    $this->form_validation->set_rules("pkg_id", "Package Id", "required");
+
+    // checking form submittion have any error or not
+    if($this->form_validation->run() === FALSE){
+      // we have some errors
+      $this->responseResult(0, strip_tags(validation_errors()));
+    }else{
+
+      $content = array(
+        "pkg_id" => $pkg_id,
+        "cat_id" => $cat_id == null ? 0 : $cat_id,
+        "sub_cat_id" => 0,
+        "title" => $title,
+        "description" => null,
+        "image" => null,
+        "link" => null,
+        "visibility" => 1,
+        "json_data" => $json_data,
+        "other_property" => null
+      );
+
+      if($isUpdateOnly){
+        if($this->database_model->update_content($whereClause, $category)){
+          $this->responseStatus(STATUS_SUCCESS, "Data has been updated");
+        }else{
+          $this->responseStatus(STATUS_FAILURE,"Failed to update Data");
+        }
+      }else {
+        if($this->database_model->insert_content($isInsertUpdate, $whereClause, $category)){
+          $this->responseStatus(STATUS_SUCCESS, "Data has been " . ($isInsertUpdate ? "updated" : "created"));
+        }else{
+          $this->responseStatus(STATUS_FAILURE,"Failed to " . ($isInsertUpdate ? "update" : "create") . " Data");
+        }
+      }
+    }
+  }
+
+  //http://localhost/droidapps/index.php/api/v1/database/delete-data
+  public function delete_data_post(){
+    // delete data method
+    $pkg_id = $this->input->post("pkg_id");
+    $cat_id = $this->input->post("cat_id");
+    $whereClause = $this->getDataWhereClause($pkg_id, $cat_id, null);
+
+    if($this->database_model->delete_content($whereClause)){
+      $this->responseStatus(STATUS_SUCCESS, "Data has been deleted");
+    }else{
+      $this->responseStatus(STATUS_FAILURE,"Failed to delete Data");
+    }
+  }
+
+  //http://localhost/droidapps/index.php/api/v1/Database/get-data
+  public function get_data_get(){
+    $pkg_id = $this->input->get("pkg_id");
+    $cat_id = $this->input->get("cat_id");
+    $whereClause = $this->getDataWhereClause($pkg_id, $cat_id, null);
+
+    $content = $this->database_model->get_content_data($whereClause);
+    if(count($content) > 0){
+      $this->responseResult(STATUS_SUCCESS,"Data found", $content);
+    }else{
+      $this->responseResult(STATUS_FAILURE," No Data found");
+    }
+  }
+
 }
 
  ?>

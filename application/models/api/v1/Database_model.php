@@ -70,5 +70,11 @@ class Database_model extends CI_Model{
      $query = $this->db->get_where("table_content", $whereClause);
      return $query->result();
    }
+
+   public function get_content_data($whereClause = array()){
+     $this->db->select('pkg_id, id, cat_id, json_data, updated_at');
+     $query = $this->db->get_where("table_content", $whereClause);
+     return $query->result();
+   }
 }
 ?>
