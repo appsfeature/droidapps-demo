@@ -88,13 +88,13 @@ API Base Url: `http://yourdomain.com/droidapps/index.php/api/v1/database/`
 ## Table Category
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/appsfeature/droidapps/master/screenshots/tableContent.png" alt="Preview 1" width="600" />
+  <img src="https://raw.githubusercontent.com/appsfeature/droidapps/master/screenshots/tableCategory.png" alt="Preview 1" width="600" />
 </p>
 
 ## Table Content
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/appsfeature/droidapps/master/screenshots/tableCategory.png" alt="Preview 1" width="600" />
+  <img src="https://raw.githubusercontent.com/appsfeature/droidapps/master/screenshots/tableContent.png" alt="Preview 1" width="600" />
 </p>
 
 
