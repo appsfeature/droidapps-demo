@@ -4,7 +4,8 @@ This is a developed community where you will find several interesting blog artic
 
 ## CodeIgniter Documentation
 
--  https://www.codeigniter.com/userguide3/database/query_builder.html#selecting-data/
+-[https://www.codeigniter.com/userguide3/database/query_builder.html](https://www.codeigniter.com/userguide3/database/query_builder.html)
+
 
 ## ScreenShots
 
@@ -22,13 +23,14 @@ This is a developed community where you will find several interesting blog artic
 - POST: insert-category, insert-update-category
 
         Params : pkg_id, sub_cat_id, cat_name, cat_type, image, order_id, visibility
-        , json_data, other_property
+                 , json_data, other_property
 
         Where  : pkg_id, cat_name, sub_cat_id
 
 - POST: update-category
 
-        Params : pkg_id, cat_id, sub_cat_id, cat_name, cat_type, image, order_id, visibility, json_data, other_property
+        Params : pkg_id, cat_id, sub_cat_id, cat_name, cat_type, image, order_id, visibility
+                 ,json_data, other_property
 
         Where  : pkg_id, cat_id, sub_cat_id
 
@@ -47,14 +49,14 @@ This is a developed community where you will find several interesting blog artic
 - POST: insert-content, insert-update-content
 
         Params : pkg_id, cat_id, sub_cat_id, title, description, image, link, visibility
-        , json_data, other_property
+                 , json_data, other_property
 
         Where  : pkg_id, cat_id, sub_cat_id
 
 - POST: update-content
 
         Params : pkg_id, id, cat_id, sub_cat_id, title, description, image, link, visibility
-        , json_data, other_property
+                 , json_data, other_property
 
         Where  : pkg_id, id, cat_id, sub_cat_id
 
