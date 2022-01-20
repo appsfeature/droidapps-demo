@@ -1,12 +1,12 @@
-#Droid-Apps Backend
+# Droid-Apps Backend
 
 This is a developed community where you will find several interesting blog articles with short and cool codes. It contains Laravel 8, CodeIgniter 4, MySQL, WordPress, Node Js etc. Please visit once and see the power of learning from this blog.
 
-##CodeIgniter Documentation
+## CodeIgniter Documentation
 
 -  https://www.codeigniter.com/userguide3/database/query_builder.html#selecting-data/
 
-##ScreenShots
+## ScreenShots
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/appsfeature/location-picker/master/screenshots/sample1.png" alt="Preview 1" width="250" />
@@ -14,10 +14,12 @@ This is a developed community where you will find several interesting blog artic
 </p>
 
 
-### BaseUrl: http://yourdomain.com/droidapps/index.php/api/v1/database/
 
-##Category API's methods
+### API Base Url: http://yourdomain.com/droidapps/index.php/api/v1/database/
+
+## Category API's methods
 *******************
+```xml
 - POST: insert-category, insert-update-category
         Params : pkg_id, sub_cat_id, cat_name, cat_type, image, order_id, visibility, json_data, other_property
 
@@ -33,11 +35,11 @@ This is a developed community where you will find several interesting blog artic
 
 - GET: get-category
         Params & Where : pkg_id, cat_id, sub_cat_id
-
+```
 *******************
 
 
-##Content API's methods
+## Content API's methods
 *******************
 - POST: insert-content, insert-update-content
         Params : pkg_id, cat_id, sub_cat_id, title, description, image, link, visibility, json_data, other_property
@@ -61,7 +63,7 @@ This is a developed community where you will find several interesting blog artic
 *******************
 
 
-##Data API's methods
+## Data API's methods
 *******************
 - POST: insert-data, insert-update-data
         Params & Where : pkg_id, cat_id, json_data
