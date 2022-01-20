@@ -8,6 +8,7 @@ This is a developed community where you will find several interesting blog artic
 API Base Url: `http://yourdomain.com/droidapps/index.php/api/v1/database/`
 
 - GET: get-apps
+
         return all apps list.
 
 ## Category API's methods
