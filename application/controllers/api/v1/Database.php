@@ -14,6 +14,19 @@ class Database extends REST_Controller{
     $this->load->helper("security");
   }
 
+
+  //http://localhost/droidapps/index.php/api/v1/Database/get_apps
+  public function get_apps_get(){
+    $apps = $this->database_model->get_apps();
+    // print_r($students);
+    // die();
+    if(count($apps) > 0){
+      $this->responseResult(STATUS_SUCCESS,"Apps found", $apps);
+    }else{
+      $this->responseResult(STATUS_FAILURE," No Apps found");
+    }
+  }
+
   private function getCategoryWhereClause($pkg_id, $cat_id_or_name, $sub_cat_id){
     $key_cat_id_or_name = is_numeric($cat_id_or_name) ? 'cat_id' : 'cat_name';
 

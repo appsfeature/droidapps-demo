@@ -9,6 +9,12 @@ class Database_model extends CI_Model{
     $this->load->database();
   }
 
+  public function get_apps(){
+    $this->db->order_by('app_id', 'DESC');
+    $query = $this->db->get('table_app');
+    return $query->result();
+  }
+
    public function insert_category($isUpdate = false, $whereClause = array(), $data = array()){
      $query = $this->db->get_where('table_category', $whereClause);
      if($query->num_rows() <= 0 ){
