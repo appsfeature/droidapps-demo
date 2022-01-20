@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 09:55 AM
+-- Generation Time: Jan 20, 2022 at 01:12 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `droid_apps`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `table_app`
+--
+
+CREATE TABLE `table_app` (
+  `app_id` int(100) NOT NULL,
+  `pkg_id` varchar(500) NOT NULL,
+  `app_name` varchar(500) NOT NULL,
+  `visibility` int(100) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -81,6 +94,12 @@ INSERT INTO `table_content` (`pkg_id`, `id`, `cat_id`, `sub_cat_id`, `title`, `d
 --
 
 --
+-- Indexes for table `table_app`
+--
+ALTER TABLE `table_app`
+  ADD PRIMARY KEY (`app_id`);
+
+--
 -- Indexes for table `table_category`
 --
 ALTER TABLE `table_category`
@@ -97,6 +116,12 @@ ALTER TABLE `table_content`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `table_app`
+--
+ALTER TABLE `table_app`
+  MODIFY `app_id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `table_category`
