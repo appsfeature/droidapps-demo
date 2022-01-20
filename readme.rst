@@ -10,6 +10,13 @@ CodeIgniter Documentation
 
 -  `CodeIgniter <https://www.codeigniter.com/userguide3/database/query_builder.html#selecting-data/>`_
 
+*******************
+ScreenShots
+*******************
+<p align="left">
+  <img src="https://raw.githubusercontent.com/appsfeature/location-picker/master/screenshots/sample1.png" alt="Preview 1" width="250" />
+  <img src="https://raw.githubusercontent.com/appsfeature/location-picker/master/screenshots/sample2.png" alt="Preview 2" width="250" />
+</p>
 
 
 BaseUrl: http://yourdomain.com/droidapps/index.php/api/v1/database/
